@@ -11,7 +11,7 @@ WITH transactions_per_customer AS (
             COUNT(*) / NULLIF( 
                 TIMESTAMPDIFF( -- This finds the number of months between the min and max transaction dates.
                     MONTH, MIN(transaction_date), MAX(transaction_date)
-                ), 0 -- NULLIF here makes sure I don't divide by 0 if both transaction dates are in the same month.
+                ), 0 -- NULLIF here makes sure I don't divide by 0 if all transaction dates are in the same month.
             ), 2
         ) AS avg_tx_per_month
     FROM savings_savingsaccount
