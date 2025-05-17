@@ -57,6 +57,6 @@ Steps below:
     * I joined the CTE with the plans_plan table to link each transaction to its respective plan and owner.
     * I used a CASE statement to assign a readable plan type (Savings, Investment, or Others for the unspecified ones).
 
-I then calculated the number of days since the last transaction using DATEDIFF(CURRENT_DATE, last_tx_date).
+3. I then calculated the number of days since the last transaction using DATEDIFF.
 
-To meet the requirement, I applied a filter for plans with inactivity over 365 days and ordered the output by inactivity_days in descending order for quick review of the most dormant accounts.
+4. To meet the requirement, I applied a filter for plans with inactivity over 365 days and ordered the output by inactivity_days in descending order for quick review of the most dormant accounts.
