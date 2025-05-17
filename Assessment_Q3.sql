@@ -9,7 +9,7 @@ WITH latest_tx AS (
     WHERE confirmed_amount > 0
     GROUP BY plan_id
 )
-/* Assigning a name to each plan type (Using 'Others' for unknown and non-specified types).
+/* Assigning a name to each plan type (Using 'Others' for unknown and unspecified types).
 Found the number of days between the current date and the last transaction date.
 Then filtered for days longer than a year (365 days).
 */
