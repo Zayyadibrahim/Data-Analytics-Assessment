@@ -19,3 +19,25 @@ Some of the challenges I faced was how to make it less tedious and long. I start
 
 
 
+## Question 2. Transaction frequency analysis.
+
+I was asked to analyse how often customers perform transactions. Based on their average monthly transaction rate, I needed to categorise them into:
+High Frequency: >= 10 transactions/month
+Medium Frequency: 3–9 transactions/month
+Low Frequency: <= 2 transactions/month
+
+Steps below:
+1. I started by creating a CTE named transactions_per_customer. This CTE calculates:
+   i. The total number of transactions for each customer
+   ii. The number of active months between their first and last transaction (TIMESTAMPDIFF(MONTH, MIN(transaction_date), MAX(transaction_date)))
+   iii. The average number of transactions per month, using a NULLIF to avoid division by zero in cases where all transactions happened within a single month.
+
+Next, I created a second CTE called categorised_customers, where I used a CASE statement to group each customer into one of the frequency categories based on their monthly average.
+
+In the final query, I grouped by these frequency categories and:
+
+Counted the number of customers in each group (COUNT(*))
+
+Calculated the average monthly transaction rate within each group (AVG(avg_tx_per_month))
+
+I used ORDER BY FIELD(...) to ensure the frequency categories appear in logical order: High, Medium, then Low—rather than alphabetically.
