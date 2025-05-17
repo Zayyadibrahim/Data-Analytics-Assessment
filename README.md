@@ -7,7 +7,7 @@ I was asked to identify customers who have at least one savings plan and at leas
 Step below:
 1. To make the query cleaner, I used aliases for the tables: users_customuser as users, plans_plan as plan, and savings_savingsaccount as save.
 
-2. I joined users with plan on the owner_id, and plan with save on plan_id.
+2. I joined users with plan on the owner_id, and plan with save on plan_id. Then I concatenated the first and last name into a single column 'name'.
 
 3. I filtered out only the deposit records where confirmed_amount was greater than 0, as this indicates actual inflow activity.
 
