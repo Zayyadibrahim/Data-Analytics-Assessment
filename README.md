@@ -53,11 +53,9 @@ Steps below:
     * The most recent transaction date (MAX(DATE(transaction_date))) per plan. The transaction_date column is in a datetime format, so I converted to just date.
     * I filtered the transactions to include only actual inflows by checking that confirmed_amount > 0.
 
-In the main query:
-
-I joined this CTE with the plans_plan table to link each transaction to its respective plan and owner.
-
-I used a CASE statement to assign a readable plan type (Savings, Investment, or Others if it couldn’t be determined).
+2. In the main query:
+    * I joined the CTE with the plans_plan table to link each transaction to its respective plan and owner.
+    * I used a CASE statement to assign a readable plan type (Savings, Investment, or Others for the unspecified ones).
 
 I then calculated the number of days since the last transaction using DATEDIFF(CURRENT_DATE, last_tx_date).
 
