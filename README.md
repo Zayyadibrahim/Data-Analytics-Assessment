@@ -28,9 +28,9 @@ Low Frequency: <= 2 transactions/month
 
 Steps below:
 1. I started by creating a CTE named transactions_per_customer. This CTE calculates:
-   i. The total number of transactions for each customer
-   ii. The number of active months between their first and last transaction (TIMESTAMPDIFF(MONTH, MIN(transaction_date), MAX(transaction_date)))
-   iii. The average number of transactions per month, using a NULLIF to avoid division by zero in cases where all transactions happened within a single month.
+   ** The total number of transactions for each customer
+   ** The number of active months between their first and last transaction (TIMESTAMPDIFF(MONTH, MIN(transaction_date), MAX(transaction_date)))
+   *** The average number of transactions per month, using a NULLIF to avoid division by zero in cases where all transactions happened within a single month.
 
 Next, I created a second CTE called categorised_customers, where I used a CASE statement to group each customer into one of the frequency categories based on their monthly average.
 
