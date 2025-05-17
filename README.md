@@ -60,3 +60,5 @@ Steps below:
 3. I then calculated the number of days since the last transaction using DATEDIFF.
 
 4. To meet the requirement, I applied a filter for plans with inactivity over 365 days and ordered the output by inactivity_days in descending order for quick review of the most dormant accounts.
+
+The challenge faced was me trying to optimise just like the first question. I used subqueries instead of CTEs to try to make the queries shorter but they were not easily readable.
