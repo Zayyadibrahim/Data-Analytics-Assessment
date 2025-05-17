@@ -22,9 +22,9 @@ Some of the challenges I faced was how to make it less tedious and long. I start
 ## Question 2. Transaction frequency analysis.
 
 I was asked to analyse how often customers perform transactions. Based on their average monthly transaction rate, I needed to categorise them into:
-High Frequency: >= 10 transactions/month
-Medium Frequency: 3–9 transactions/month
-Low Frequency: <= 2 transactions/month
+* High Frequency: >= 10 transactions/month
+* Medium Frequency: 3–9 transactions/month
+* Low Frequency: <= 2 transactions/month
 
 Steps below:
 1. I started by creating a CTE named transactions_per_customer. This CTE calculates:
