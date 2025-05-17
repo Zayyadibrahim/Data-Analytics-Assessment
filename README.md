@@ -35,8 +35,8 @@ Steps below:
 2. I created a second CTE called categorised_customers, where I used a CASE statement to group each customer into one of the frequency categories above based on their monthly average.
 
 3. In the final query, I grouped these frequency categories and:
-    * Counted the number of customers in each group (COUNT(*))
-    * Calculated the average monthly transaction rate within each group (AVG(avg_tx_per_month))
+    * Counted the number of customers in each group
+    * Calculated the average monthly transaction rate within each group.
 
 4. I used ORDER BY FIELD to ensure the frequency categories appear in logical order: High, Medium, then Low. Rather than alphabetically.
 
