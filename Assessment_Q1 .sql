@@ -13,7 +13,7 @@ JOIN savings_savingsaccount save ON plan.id = save.plan_id
 WHERE save.confirmed_amount > 0
 GROUP BY 
 	owner_id, 
-    name
+	name
 HAVING 
     savings_count >= 1
     AND
