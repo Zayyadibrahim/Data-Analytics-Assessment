@@ -41,3 +41,24 @@ Steps below:
 4. I used ORDER BY FIELD to ensure the frequency categories appear in logical order: High, Medium, then Low. Rather than alphabetically.
 
 The only challenge here was having to figure out what function to use to count the number of months as I tried counting the number of days and dividing by 30. I eventually used TIMESTAMPDIFF.
+
+
+
+## Question 3. Account inactivity alert.
+
+The task here was to identify all active accounts (either savings or investment) that have not received any deposits (inflow) in at least the last 365 days. This helps the operations team to flag dormant accounts.
+
+Steps below:
+1. I created a CTE called latest_tx, which fetches:
+    * The most recent transaction date (MAX(DATE(transaction_date))) per plan. The transaction_date column is in a datetime format, so I converted to just date.
+    * I filtered the transactions to include only actual inflows by checking that confirmed_amount > 0.
+
+In the main query:
+
+I joined this CTE with the plans_plan table to link each transaction to its respective plan and owner.
+
+I used a CASE statement to assign a readable plan type (Savings, Investment, or Others if it couldn’t be determined).
+
+I then calculated the number of days since the last transaction using DATEDIFF(CURRENT_DATE, last_tx_date).
+
+To meet the requirement, I applied a filter for plans with inactivity over 365 days and ordered the output by inactivity_days in descending order for quick review of the most dormant accounts.
