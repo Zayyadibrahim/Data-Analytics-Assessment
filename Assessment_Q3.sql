@@ -4,7 +4,7 @@
 WITH latest_tx AS (
     SELECT
         plan_id,
-        MAX(transaction_date) AS last_tx_date
+        MAX(DATE(transaction_date)) AS last_tx_date -- DATE function to remove the timestamp.
     FROM savings_savingsaccount
     WHERE confirmed_amount > 0
     GROUP BY plan_id
