@@ -40,4 +40,4 @@ Steps below:
 
 4. I used ORDER BY FIELD to ensure the frequency categories appear in logical order: High, Medium, then Low. Rather than alphabetically.
 
-The only challenge here was having to figure out what function to use to count the number of months as I tried counting the number of days and dividing by 30. I eventually found TIMESTAMPDIFF online.
+The only challenge here was having to figure out what function to use to count the number of months as I tried counting the number of days and dividing by 30. I eventually used TIMESTAMPDIFF.
