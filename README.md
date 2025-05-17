@@ -34,7 +34,7 @@ Steps below:
 
 2. I created a second CTE called categorised_customers, where I used a CASE statement to group each customer into one of the frequency categories above based on their monthly average.
 
-3. In the final query, I grouped by these frequency categories and:
+3. In the final query, I grouped these frequency categories and:
     * Counted the number of customers in each group (COUNT(*))
     * Calculated the average monthly transaction rate within each group (AVG(avg_tx_per_month))
 
