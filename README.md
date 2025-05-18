@@ -57,7 +57,7 @@ The task here was to identify all active accounts (either savings or investment)
 
 Steps below:
 1. I created a CTE called latest_tx, which fetches:
-    * The most recent transaction date (MAX(DATE(transaction_date))) per plan. The transaction_date column is in a datetime format, so I converted to just date.
+    * The most recent transaction date per plan. The transaction_date column is in a datetime format, so I converted to just date.
     * I filtered the transactions to include only actual inflows by checking that confirmed_amount > 0.
 
 2. In the main query:
