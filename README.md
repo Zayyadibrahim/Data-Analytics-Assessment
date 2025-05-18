@@ -78,7 +78,7 @@ The challenge faced was me trying to optimise just like the first question. I us
 
 Here, I was asked to estimate each customer’s Customer Lifetime Value (CLV) using a model that considers transaction volume, account tenure, and average profit per transaction. The formula given was:
 
-CLV = (total_transactions / tenure_months) * 12 * avg_profit_per_transaction. Where avg_profit_per_transaction = 0.1% of transaction value.
+CLV = (total_transactions / tenure_months) * 12 * avg_profit_per_transaction. Where profit_per_transaction = 0.1% of transaction value.
 
 Steps below:
 1. I joined the users_customuser table with savings_savingsaccount to access both the customers' signup date and their transaction records.
