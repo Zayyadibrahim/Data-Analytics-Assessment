@@ -92,7 +92,7 @@ Steps below:
 5. The average profit per transaction was computed as:
 0.001 * (SUM(confirmed_amount) / total_transactions). I left the values in kobo here unlike in question 1 because the numbers are not as lengthy.
      * The estimated_clv formula follows the above logic, and I rounded up to the nearest whole number.
-     * I used NULLIF() to prevent division by zero when tenure is zero.
+     * I used NULLIF to prevent division by zero when tenure is zero.
 
 6. Finally, I ordered the results by estimated_clv in descending order to show the most valuable customers.
 
